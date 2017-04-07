@@ -46,10 +46,15 @@
         <input type="button" id="sendCoordinates" value="Go" />
     
     <div id="map"></div>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1aA54SrCbMUmBXfg5yBrNGkLRVJM6m-E&callback=initMap">
+    </script>
     <script>
         var map;
         var x = 10;
         var y = 10;
+        //document.getElementById("map").onload = function () { initMap(0, 0) };
+        //document.addEventListener("load", initMap(0, 0));
         function initMap(x, y) {
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 2,
@@ -57,15 +62,15 @@
                 mapTypeId: 'terrain'
             });
         }
+        
         $('#sendCoordinates').click(function () {
             var x = $('#longitude').val();
             var y = $('#latitude').val();
             initMap(x, y);
         });
+        
     </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1aA54SrCbMUmBXfg5yBrNGkLRVJM6m-E&callback=initMap">
-    </script>
+    
 </div>
 
 
